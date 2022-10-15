@@ -4,12 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/globalStyles.css" />
     <link rel="stylesheet" href="index.css" />
+
+    <link rel="stylesheet" href="../../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../../styles/groups.css" />
+    <link rel="stylesheet" href="../../styles/inputs.css" />
+    <link rel="stylesheet" href="../../styles/buttons.css" />
+    <link rel="stylesheet" href="../../styles/margins.css" />
+    <link rel="stylesheet" href="../../styles/positioning.css" />
+    <link rel="stylesheet" href="../../styles/texts.css" />
+
     <title>Git Search</title>
   </head>
   <body>
-    <main></main>
+    <main class="flex">
+      <section class="containerRecently">
+        <div class="sectionRecently">
+          <h1 class="home-h1">Git Search</h1>
+          <p class="home-p">
+            Encontre e se conecte com profissionais de forma rápida e fácil
+          </p>
+          <div class="flex align-center">
+            <span class="home-span">Achados recentemente:</span>
+            <!-- itens da ul serão atribuidos pelo DOM -->
+            <ul class="recentlyUserList">
+              <li class="recentlyUsers">
+                <img src="./Ellipse 2.png" alt="" />
+                <button class="buttonAccess">Acessar este perfil</button>
+              </li>
+              <li class="recentlyUsers">
+                <img src="./Ellipse 2.png" alt="" />
+                <button class="buttonAccess">Acessar este perfil</button>
+              </li>
+              <li class="recentlyUsers">
+                <img src="./Ellipse 2.png" alt="" />
+                <button class="buttonAccess">Acessar este perfil</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="containerSearch">
+        <div class="sectionSearch">
+          <h2 class="search-h2">Procurar por um usuário</h2>
+          <label class="search-label" for="">Usuário github</label>
+          <input
+            class="input-search"
+            placeholder="Digite um usuário do github aqui..."
+            type="text"
+            name=""
+            id="searchUser"
+          />
+          <label class="notFound" for="">Usuário não encontrado</label>
+          <button class="button-profile">Ver perfil do github</button>
+        </div>
+      </section>
+    </main>
     <script src="index.js"></script>
   </body>
 </html>
