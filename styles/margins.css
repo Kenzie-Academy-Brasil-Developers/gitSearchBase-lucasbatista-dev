@@ -10,6 +10,15 @@
 .m-top55 {
   margin-top: 55px;
 }
+.m-top60 {
+  margin-top: 60px;
+}
+.m-top70 {
+  margin-top: 70px;
+}
+.m-botton15 {
+  margin-bottom: 15px;
+}
 .p-left35 {
   padding-left: 35px;
 }
@@ -17,5 +26,8 @@
   padding-left: 28px;
 }
 .gap20 {
-  gap: 20;
+  gap: 20px;
+}
+.gap15 {
+  gap: 15px;
 }
