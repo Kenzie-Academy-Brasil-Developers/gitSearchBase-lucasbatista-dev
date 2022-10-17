@@ -1,30 +1,3 @@
-// ---------------------------------> Botão spinner
-function next() {
-  const button = document.querySelector(".button-profile");
-
-  button.addEventListener("click", () => {
-    window.location.replace("pages/profile/index.html");
-  });
-}
-// next();
-
-// function search() {
-//   setTimeout(() => {
-//     const button = document.querySelector(".button-profile");
-
-//     button.addEventListener("click", () => {
-//       button.innerHTML = "";
-
-//       const img = document.createElement("img");
-//       img.src = "/assets/spinner.svg";
-//       img.alt = "spinner";
-//       img.classList.add("loading");
-
-//       button.append(img);
-//     });
-//   }, 2000);
-// }
-
 // ---------------------------------> PEGANDO ELEMENTOS HTML
 const url = `https://api.github.com/`;
 const inputSearch = document.querySelector(".input-search");
@@ -47,6 +20,8 @@ async function getAPIGit() {
       const msgError = document.querySelector(".notFound");
       msgError.classList = "notFoundError";
       inputSearch.value = "";
+      // button.innerHTML = "";
+      // button.innerText = "Buscar na API";
     }, 2000);
   } else {
     setTimeout(() => {
@@ -56,10 +31,29 @@ async function getAPIGit() {
     }, 2000);
   }
 }
-
-// ---------------------------------> PEGANDO EVENTOS DE CLIQUE E DIGITAÇÃO E JOGANDO PARA DENTRO DA URL
+search();
+// ---------------------------------> PEGANDO EVENTOS DE CLIQUE DE DIGITAÇÃO E JOGANDO PARA DENTRO DA URL
 buttonSearch.addEventListener("click", (event) => {
   getAPIGit();
 });
 
 // ---------------------------------> ADICIONANDO USUARIOS RECENTE AO LOCALSTORAGE
+
+// ---------------------------------> Botão spinner
+
+function search() {
+  setTimeout(() => {
+    const button = document.querySelector(".button-profile");
+
+    button.addEventListener("click", () => {
+      button.innerHTML = "";
+
+      const img = document.createElement("img");
+      img.src = "/assets/spinner.svg";
+      img.alt = "spinner";
+      img.classList.add("loading");
+
+      button.append(img);
+    });
+  });
+}
