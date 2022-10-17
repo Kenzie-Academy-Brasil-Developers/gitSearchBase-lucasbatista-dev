@@ -20,15 +20,14 @@ async function getAPIGit() {
       const msgError = document.querySelector(".notFound");
       msgError.classList = "notFoundError";
       inputSearch.value = "";
-      // button.innerHTML = "";
-      // button.innerText = "Buscar na API";
+      buttonSearch.innerHTML = "";
+      buttonSearch.innerText = "Buscar na API";
     }, 2000);
   } else {
     setTimeout(() => {
       inputSearch.value = "";
-
       window.location.href = `../profile/index.html?user=${data.login}`;
-    }, 2000);
+    }, 1000);
   }
 }
 search();
