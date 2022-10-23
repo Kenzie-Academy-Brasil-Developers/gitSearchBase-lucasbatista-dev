@@ -36,6 +36,9 @@
   margin-left: -35px;
   position: absolute;
 }
+.buttonAccess a {
+  text-decoration: none;
+}
 .button-pink {
   background: var(--color-brand-2);
   border: none;

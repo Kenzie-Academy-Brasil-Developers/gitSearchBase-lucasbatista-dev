@@ -35,11 +35,11 @@
 .recentlyUsers:hover > .buttonAccess {
   display: block;
 }
-.sectionSearch:focus-within > .button-profile {
+/* .sectionSearch:focus-within > .button-profile {
   background: var(--color-brand-2);
   color: var(--color-grey-7);
   cursor: pointer;
-}
+} */
 
 .containerMain {
   width: 100%;
