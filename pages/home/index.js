@@ -4,6 +4,8 @@ const inputSearch = document.querySelector(".input-search");
 const buttonSearch = document.querySelector(".button-profile");
 const msgError = document.querySelector(".notFound");
 
+// ---------------------------------> Ativando e desativando botão de pesquisa
+
 inputSearch.addEventListener("input", () => {
   msgError.classList = "notFound";
   buttonSearch.disabled = false;
@@ -18,6 +20,35 @@ inputSearch.addEventListener("input", () => {
 
 console.log(inputSearch.value);
 
+// ---------------------------------> Usuarios recentes
+const ul = document.querySelector(".recentlyUserList");
+
+function createRecentUser(index, arrayRecently) {
+  ul.insertAdjacentHTML(
+    "afterbegin",
+    `
+      <li class="recentlyUsers">
+         <img
+         id="${index}"
+         class="recentlyImg"
+         src="${arrayRecently[index].urlImg}"
+         alt=""/>
+         <button class="buttonAccess">
+         <a href="/pages/profile/index.html?user=${arrayRecently[index].login}">Acessar este perfil</a>
+       </button>
+      </li>
+  
+  `
+  );
+}
+
+function setLocalStorage() {
+  let arrayRecently = [];
+  if (localStorage.recentUsers) {
+  } else {
+    localStorage.recentUsers = JSON.stringify(arrayRecently);
+  }
+}
 // ---------------------------------> PEGANDO DADOS DA API
 async function getAPIGit() {
   const response = await fetch(`${url}users/${inputSearch.value}`);
@@ -51,8 +82,6 @@ buttonSearch.addEventListener("click", (event) => {
   getAPIGit();
 });
 
-// ---------------------------------> ADICIONANDO USUARIOS RECENTE AO LOCALSTORAGE
-
 // ---------------------------------> Botão spinner
 
 function search() {
@@ -72,27 +101,7 @@ function search() {
   });
 }
 
-// ---------------------------------> Usuarios recentes
-const ul = document.querySelector(".recentlyUserList");
-
-function createRecentUser(index, arrayRecently) {
-  ul.insertAdjacentHTML(
-    "afterbegin",
-    `
-      <li class="recentlyUsers">
-         <img
-         id="${index}"
-         class="recentlyImg"
-         src="${arrayRecently[index].urlImg}"
-         alt=""/>
-         <button class="buttonAccess">
-         <a href="/pages/profile/index.html?user=${arrayRecently[index].login}">Acessar este perfil</a>
-       </button>
-      </li>
-  
-  `
-  );
-}
+// --------------------------------->Adicionando  Usuarios recentes
 
 function setListRecently() {
   let arrayRecently = JSON.parse(localStorage.recentUsers);
@@ -113,14 +122,6 @@ function setRecentUser(login, avatar) {
   let arrayRecently = JSON.parse(localStorage.recentUsers);
   arrayRecently.push({ login: login, urlImg: avatar });
   localStorage.recentUsers = JSON.stringify(arrayRecently);
-}
-
-function setLocalStorage() {
-  let arrayRecently = [];
-  if (localStorage.recentUsers) {
-  } else {
-    localStorage.recentUsers = JSON.stringify(arrayRecently);
-  }
 }
 
 setLocalStorage();
